@@ -1,28 +1,76 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #121212;
   color: #E0E0E0;
   font-family: 'Segoe UI', sans-serif;
-  margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
 /* HERO SECTION */
 .hero-section {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px 40px 20px 40px;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  gap: 40px;
+  background-color: #1A1A1A;
+}
+
+.photo-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.glow-circle {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glow-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid #00BFA6;
+  box-shadow: 0 0 20px #00BFA6;
+  animation: rotate 6s linear infinite;
+  z-index: 1;
+}
+
+.glow-circle img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .text-section {
   flex: 1;
-  min-width: 300px;
+  max-width: 600px;
 }
 
 .text-section h1 {
-  font-size: 4rem; /* Bigger name */
-  margin: 0;
+  font-size: 4.5rem;
   color: #00BFA6;
 }
 
@@ -44,54 +92,28 @@ body {
   50% { opacity: 0; }
 }
 
-/* CIRCULAR PHOTO */
-.photo-section {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.resume-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 24px;
+  background-color: #00BFA6;
+  color: #121212;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-.glow-circle {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.resume-btn:hover {
+  background-color: #00e0c0;
+  box-shadow: 0 0 10px #00ffcc;
+  transform: scale(1.05);
 }
 
-.glow-ring {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 5px solid #00BFA6;
-  box-shadow: 0 0 20px #00BFA6;
-  animation: rotate 6s linear infinite;
-  z-index: 1;
-}
-
-.glow-circle img {
-  width: 190px;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* SKILLS CONTAINER */
+/* SKILLS SECTION */
 .TechnicalSkillsContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
-  grid-template-rows: repeat(2, auto);   /* Fixed 2 rows */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding: 60px;
   justify-content: center;
@@ -143,4 +165,26 @@ body {
 .skill-card:hover .progress-bar {
   background-color: #1E1E1E;
   color: #F9F9F9;
+}
+
+/* HOPES SECTION */
+.InternTargets {
+  max-width: 900px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+}
+
+.InternTargets h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #00BFA6;
+}
+
+.InternTargets ul {
+  padding-left: 20px;
+}
+
+.InternTargets li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
