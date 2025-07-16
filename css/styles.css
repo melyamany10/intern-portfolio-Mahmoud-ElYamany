@@ -181,10 +181,101 @@ body {
 }
 
 .InternTargets ul {
-  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  list-style: none; /* Remove bullet points */
+  padding-left: 0;
+  margin: 0;
 }
 
 .InternTargets li {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
+  font-size: 1.35em; /* Increase font size */
+  color: #334155;
+  margin-bottom: 0;
+  padding: 22px 28px;
+  background: #18181b;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0,191,166,0.10);
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+  min-width: 220px;
+  flex: 0 1 auto;
+  font-weight: 500;
+  border: 1px solid #232323;
+}
+
+.InternTargets li:hover {
+  color: #fff;
+  background: #00BFA6;
+  box-shadow: 0 4px 24px #00ffd0, 0 0 0 2px #00BFA6;
+}
+
+/* NAVIGATION ICONS */
+.skills-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+  margin-bottom: -20px;
+}
+
+.nav-icon {
+  font-size: 2.3rem;
+  color: #00BFA6;
+  background: #18181b;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,191,166,0.10);
+  border: 2px solid transparent;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.nav-icon.active {
+  background: #00BFA6;
+  color: #18181b;
+  border: 2px solid #00BFA6;
+  box-shadow: 0 4px 24px #00ffd0;
+}
+.nav-icon:hover {
+  background: #00e0c0;
+  color: #fff;
+}
+
+/* Hide inactive skills section */
+.SoftSkillsContainer,
+.TechnicalSkillsContainer {
+  transition: opacity 0.3s;
+}
+
+/* Soft Skills Cards */
+.SoftSkillsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 60px;
+  justify-content: center;
+}
+
+.skill-card.soft {
+  background-color: #1E1E1E;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  color: #E0E0E0;
+  box-shadow: 0 4px 12px rgba(0, 255, 200, 0.1);
+  font-size: 1.2rem;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.skill-card.soft:hover {
+  background-color: #00BFA6;
+  color: #18181b;
+}
+
+.soft-skill-title {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 18px;
+  /* Placeholder for image above if needed */
 }
